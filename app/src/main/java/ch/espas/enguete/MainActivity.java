@@ -5,9 +5,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.androidnetworking.AndroidNetworking;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,12 +22,12 @@ import ch.espas.enguete.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    ImageView imageView;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        imageView = (ImageView) findViewById(R.id.imageView4);
+        textView = (TextView) findViewById(R.id.textView);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -50,16 +49,15 @@ public class MainActivity extends AppCompatActivity {
 
         Calendar targetTime = Calendar.getInstance();
         targetTime.setTimeInMillis(System.currentTimeMillis());
-        targetTime.set(Calendar.HOUR_OF_DAY, 11);
-        targetTime.set(Calendar.MINUTE, 9);
+        targetTime.set(Calendar.HOUR_OF_DAY, 12);
+        targetTime.set(Calendar.MINUTE, 00);
         targetTime.set(Calendar.SECOND, 00);
 
 
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,  System.currentTimeMillis(),
                 1000 * 60 * 60 * 24, pendingIntent);
 
-        //aus dem Blog Eintrag: https://medium.com/@filswino/making-rest-calls-download-upload-files-with-one-line-of-code-on-android-no-retrofit-needed-5c0574f41476
-        AndroidNetworking.initialize(getApplicationContext());
+
     }
 
 }

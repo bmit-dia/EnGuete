@@ -1,12 +1,5 @@
 package ch.espas.enguete;
 
-import com.androidnetworking.AndroidNetworking;
-import com.androidnetworking.common.Priority;
-import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.JSONArrayRequestListener;
-
-import org.json.JSONArray;
-
 public class Recipe {
     long id;
     String cookTime;
@@ -14,23 +7,62 @@ public class Recipe {
     String[] ingredients;
     String[] instructions;
 
-    public void apiRequest() {
-        AndroidNetworking.get("https://api.cookbutler.com/")
-                .addPathParameter("pageNumber", "0")
-                .addQueryParameter("limit", "3")
-                .addHeaders("token", "1234")
-                .setTag("test")
-                .setPriority(Priority.LOW)
-                .build()
-                .getAsJSONArray(new JSONArrayRequestListener() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        //cooktime = response.;
-                    }
-                    @Override
-                    public void onError(ANError error) {
-                        // handle error
-                    }
-                });
+    public void recipes(){
+
+    }
+
+    // ID Access
+    // Getter
+    public long getId() {
+        return id;
+    }
+
+    // Setter
+    public void setId(long id1) {
+        this.id = id1;
+    }
+
+    // CookTime
+    // Getter
+    public String getCookTime() {
+        return cookTime;
+    }
+
+    // Setter
+    public void setCookTime(String ct) {
+        this.cookTime = ct;
+    }
+
+    // Description
+    // Getter
+    public String getDescription() {
+        return description;
+    }
+
+    // Setter
+    public void setDescription(String desc) {
+        this.description = desc;
+    }
+
+    // Ingredients
+    // Getter
+    public String[] getIngredients() {
+        return ingredients;
+    }
+
+    // Setter
+    public void setIngredients(String[] food) {
+        this.ingredients = food;
+    }
+
+    // Instructions
+    // Getter
+    public String[] getInstructions() {
+        return instructions;
+    }
+
+    // Setter
+    public void setInstructions(String[] tutorial) {
+        this.instructions = tutorial;
     }
 }
