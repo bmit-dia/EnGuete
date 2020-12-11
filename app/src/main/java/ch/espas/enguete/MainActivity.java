@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.androidnetworking.AndroidNetworking;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,14 +50,16 @@ public class MainActivity extends AppCompatActivity {
 
         Calendar targetTime = Calendar.getInstance();
         targetTime.setTimeInMillis(System.currentTimeMillis());
-        targetTime.set(Calendar.HOUR_OF_DAY, 10);
-        targetTime.set(Calendar.MINUTE, 03);
+        targetTime.set(Calendar.HOUR_OF_DAY, 11);
+        targetTime.set(Calendar.MINUTE, 9);
         targetTime.set(Calendar.SECOND, 00);
 
 
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,  System.currentTimeMillis(),
                 1000 * 60 * 60 * 24, pendingIntent);
 
+        //aus dem Blog Eintrag: https://medium.com/@filswino/making-rest-calls-download-upload-files-with-one-line-of-code-on-android-no-retrofit-needed-5c0574f41476
+        AndroidNetworking.initialize(getApplicationContext());
     }
 
 }
