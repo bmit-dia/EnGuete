@@ -1,68 +1,41 @@
 package ch.espas.enguete;
 
+import android.content.Context;
+import android.view.View;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class Recipe {
-    long id;
-    String cookTime;
-    String description;
-    String[] ingredients;
-    String[] instructions;
+    Context context;
 
-    public void recipes(){
+    private JSONArray getRecipes() {
+        File file = new File(context.getFilesDir(), "recipes.json");
 
-    }
+        StringBuilder text = new StringBuilder();
 
-    // ID Access
-    // Getter
-    public long getId() {
-        return id;
-    }
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            while ((line = br.readLine()) != null) {
+                text.append(line);
+                text.append('\n');
+            }
+        } catch (IOException e) {
+            //Error Handling
+        }
 
-    // Setter
-    public void setId(long id1) {
-        this.id = id1;
-    }
-
-    // CookTime
-    // Getter
-    public String getCookTime() {
-        return cookTime;
-    }
-
-    // Setter
-    public void setCookTime(String ct) {
-        this.cookTime = ct;
-    }
-
-    // Description
-    // Getter
-    public String getDescription() {
-        return description;
-    }
-
-    // Setter
-    public void setDescription(String desc) {
-        this.description = desc;
-    }
-
-    // Ingredients
-    // Getter
-    public String[] getIngredients() {
-        return ingredients;
-    }
-
-    // Setter
-    public void setIngredients(String[] food) {
-        this.ingredients = food;
-    }
-
-    // Instructions
-    // Getter
-    public String[] getInstructions() {
-        return instructions;
-    }
-
-    // Setter
-    public void setInstructions(String[] tutorial) {
-        this.instructions = tutorial;
+        JSONArray jsonArray;
+        try {
+            jsonArray = new JSONArray(text.toString());
+        } catch (Exception e) {
+            jsonArray = new JSONArray();
+        }
+        return jsonArray;
     }
 }

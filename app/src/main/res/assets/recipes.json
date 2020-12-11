@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Spaghetti Carbonara",
+    "duration": "45min",
+    "ingredients": [
+      "500g Spaghetti",
+      "250ml cream",
+      "2 Eggs",
+      "150g bacon",
+      "130g Parmesan",
+      "a bit of salt",
+      "a bot of pepper",
+      "30g butter"
+    ],
+    "instructions": [
+      "Get a pot of water and bring it to boil",
+      "Put the Spaghetti in the pot",
+      "Let them cook and stir from time to time",
+      "In the meantime, mix the cream, the eggs, salt and pepper",
+      "put the mixture in a pan and bring it to temperature",
+      "don't make it to hot, the eggs shouldn't coagulate",
+      "once the spaghetti are done, sieve the spaghetti and put it back in the pot",
+      "put the butter in the pan with the spaghetti",
+      "put the parmesan in the pan with the sauce and stir",
+      "get plates and serve"
+    ]
+  },
+  {
+    "name": "Spaghetti Carbonara2",
+    "duration": "45min",
+    "ingredients": [
+      "500g Spaghetti",
+      "250ml cream",
+      "2 Eggs",
+      "150g bacon",
+      "130g Parmesan",
+      "a bit of salt",
+      "a bot of pepper",
+      "30g butter"
+    ],
+    "instructions": [
+      "Get a pot of water and bring it to boil",
+      "Put the Spaghetti in the pot",
+      "Let them cook and stir from time to time",
+      "In the meantime, mix the cream, the eggs, salt and pepper",
+      "put the mixture in a pan and bring it to temperature",
+      "don't make it to hot, the eggs shouldn't coagulate",
+      "once the spaghetti are done, sieve the spaghetti and put it back in the pot",
+      "put the butter in the pan with the spaghetti",
+      "put the parmesan in the pan with the sauce and stir",
+      "get plates and serve"
+    ]
+  }
+]
