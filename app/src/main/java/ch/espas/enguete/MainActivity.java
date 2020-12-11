@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
         Calendar targetTime = Calendar.getInstance();
         targetTime.setTimeInMillis(System.currentTimeMillis());
-        targetTime.set(Calendar.HOUR_OF_DAY, 12);
-        targetTime.set(Calendar.MINUTE, 00);
+        targetTime.set(Calendar.HOUR_OF_DAY, 10);
+        targetTime.set(Calendar.MINUTE, 03);
         targetTime.set(Calendar.SECOND, 00);
 
 
